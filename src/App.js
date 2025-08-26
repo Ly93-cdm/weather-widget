@@ -8,6 +8,8 @@ function App() {
   const [Weather, setWeather] = useState(null);
   const [forecast, setForecast] = useState(null);
   const [theme, setTheme] = useState("light");
+  console.log("Weather:", Weather);
+      console.log("Forecast:", forecast);
 
   const API_KEY = process.env.REACT_APP_API_KEY;
 
@@ -21,6 +23,7 @@ function App() {
 
     function error() {
       alert("Não foi possível obter sua localização.");
+      fetchWeather(-15.793889, -47.882778);
     }
   }, []);
 
@@ -33,12 +36,14 @@ function App() {
       setWeather(data.current);
       setForecast(data.forecast.forecastday);
       console.log("Resposta da API:", data);
+      
     } catch (err) {
       console.error(err);
     }
   };
 
   return (
+    
     <div 
       className={`App ${theme === "dark" ? "theme-dark" : "theme-light"}`}>
         <div className='top-section'>
