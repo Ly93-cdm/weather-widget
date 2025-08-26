@@ -1,0 +1,16 @@
+.theme-toggle {
+    width: 250px;
+    height: 250px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    background-color: transparent;
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 0;
+}

@@ -1,0 +1,28 @@
+.weather-card {
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    width: 250px;
+    background: var(--card-bg);
+    color: var(--card-text);
+    box-shadow: var(--card-shadow);
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.theme-light {
+    --text: #fdf6f0;
+    --card-bg: linear-gradient(135deg, #2c003e, #8b1e3f, #ff6f61);
+    --card-text: #fdf6f0;
+    --card-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+}
+
+.weather-dark {
+   --bg: linear-gradient(135deg, #0d0b1f, #1a103d, #3c0f4e);
+  --text: #fdf6f0;
+  --accent: #ff4da6;
+  --card-bg: linear-gradient(135deg, #1a103d, #3c0f4e);
+  --card-text: #fdf6f0;
+  --card-shadow: 0 0 12px rgba(255, 77, 166, 0.3);
+}

@@ -1,11 +1,15 @@
 import React from "react";
 import Lottie from "lottie-react";
-import clearDay from "../assets/lottie/clear-day.svg";
-import cloudy from "../assets/lottie/cloudy.svg";
-import rain from "../assets/lottie/rain.svg";
-import snow from "../assets/lottie/snow.svg";
+import clearDay from "../assets/lottie/sunny.json";
+import cloudy from "../assets/lottie/cloudy.json";
+import rain from "../assets/lottie/rainy.json";
+import snow from "../assets/lottie/snow.json";
+import "./WeatherCard.css";
 
-function WeatherCard({ weather }) {
+function WeatherCard({ weather, theme }) {
+    if (!weather || !weather.temp_c || !weather.condition) {
+        return <p>Carregando...</p>;
+    }
     const getAnimation = (condition) => {
         const cond = condition.toLowerCase();
         if (cond.includes("chuva")) return rain;
@@ -14,17 +18,10 @@ function WeatherCard({ weather }) {
         return clearDay;
     };
 
+    const cardClass = `weather-card ${theme === "dark" ? "weather-dark" : "weather-light"}`;
+
     return (
-        <div
-            style={{
-                borderRadius: "16px",
-                padding: "1.5rem",
-                textAlign: "center",
-                background: "rgba(255,255,255,0.1)",
-                marginBottom: "2rem",
-                width: "250px"
-            }}
-        >
+        <div className={cardClass} >
             <Lottie
                 animationData={getAnimation(weather.condition.text)}
                 loop={true}

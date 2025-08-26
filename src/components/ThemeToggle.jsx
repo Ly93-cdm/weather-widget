@@ -1,21 +1,16 @@
 import React from "react";
 import { Sun, Moon } from "lucide-react";
+import "./ThemeToggle.css";
 
-function ThemeToggle({ theme, settheme }) {
+function ThemeToggle({ theme, setTheme }) {
+    const isDark = theme === "dark";
+    const buttonClass = `theme-toggle ${isDark ? "theme-dark" : "theme-light"}`;
     return (
         <button 
-            onClick={() => settheme(theme === "dark" ? "light" : "dark")}
-            style={{
-                marginBottom: "1rem",
-                padding: "0.5rem 1rem",
-                borderRadius: "8px",
-                background: theme === "dark" ? "#333" : "#ddd",
-                color: theme === "dark" ? "#fff" : "#000",
-                border: "none",
-                cursor: "pointer"
-            }}
+            onClick={() => setTheme(isDark ? "light" : "dark")}
+            className={buttonClass}
         >
-             {theme === "dark" ? <Sun /> : <Moon />}
+            {isDark ? <Sun size={64}/> : <Moon size={64}/>}
         </button>
     );
 }

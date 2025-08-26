@@ -1,18 +1,13 @@
 import React from "react";
+import "./Forecast.css";
 
 function Forecast({ forecast }) {
     return (
-        <div style={{ display: "flex", gap: "1rem" }}>
+        <div className="forecast-container">
             {forecast.map((day, idx) => (
                 <div
                     key={idx}
-                    style={{
-                        borderRadius: "12px",
-                        padding: "1rem",
-                        background: "rgba(255,255,255,0.1)",
-                        minWidth: "100px",
-                        textAlign: "center"
-                    }}
+                    
                 >
                     <p style={{ fontWeight: "bold" }}>
                         {new Date(day.date).toLocaleDateString("pt-BR", { weekday: "short" })}
