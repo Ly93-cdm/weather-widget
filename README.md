@@ -28,7 +28,7 @@ Este projeto é um widget de previsão do tempo desenvolvido com foco em respons
 ## 📦 Instalação
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repo.git
-cd seu-repo
+git clone git@github.com:Ly93-cdm/weather-widget.git
+cd ...
 npm install
 npm start
